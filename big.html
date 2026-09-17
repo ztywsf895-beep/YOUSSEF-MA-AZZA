@@ -1,0 +1,3685 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Digital Solutions | حلول رقمية متكاملة لتطوير المواقع والمنصات والتطبيقات والأنظمة والبرمجيات المخصصة.">
+
+    <meta name="keywords"
+          content="Digital Solutions, Web Development, Software, Business Systems, E-commerce, HR Management">
+
+    <meta name="author"
+          content="Digital Solutions">
+
+    <title>Digital Solutions | حلول رقمية متكاملة</title>
+
+    <style>
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #60a5fa;
+
+            --dark: #020617;
+            --dark-2: #0f172a;
+            --dark-3: #172033;
+
+            --white: #ffffff;
+
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+
+            --success: #16a34a;
+
+            --radius-sm: 10px;
+            --radius: 18px;
+            --radius-lg: 26px;
+
+            --shadow-sm:
+                0 5px 20px rgba(15, 23, 42, .06);
+
+            --shadow:
+                0 15px 45px rgba(15, 23, 42, .09);
+
+            --shadow-lg:
+                0 25px 70px rgba(15, 23, 42, .14);
+
+            --font:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                "Noto Sans Arabic",
+                Arial,
+                sans-serif;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+
+        body {
+            font-family: var(--font);
+            background: var(--gray-50);
+            color: var(--dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        button,
+        input,
+        textarea {
+            font-family: inherit;
+        }
+
+
+        button {
+            cursor: pointer;
+        }
+
+
+        img,
+        svg {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        .container {
+            width: min(1180px, calc(100% - 40px));
+            margin: auto;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(255, 255, 255, .92);
+
+            backdrop-filter: blur(18px);
+
+            -webkit-backdrop-filter: blur(18px);
+
+            border-bottom:
+                1px solid rgba(226, 232, 240, .9);
+        }
+
+
+        .header-inner {
+            min-height: 76px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 25px;
+        }
+
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            font-weight: 900;
+
+            flex-shrink: 0;
+        }
+
+
+        .brand-logo {
+            width: 45px;
+            height: 45px;
+
+            border-radius: 14px;
+
+            display: grid;
+            place-items: center;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--primary-light)
+                );
+
+            box-shadow:
+                0 10px 25px rgba(37, 99, 235, .25);
+        }
+
+
+        .brand-logo span {
+            font-size: 17px;
+            font-weight: 900;
+        }
+
+
+        .brand-text strong {
+            display: block;
+            font-size: 17px;
+        }
+
+
+        .brand-text small {
+            display: block;
+            color: var(--gray-500);
+            font-size: 10px;
+            margin-top: -3px;
+        }
+
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+
+        .nav a {
+            position: relative;
+
+            color: var(--gray-600);
+
+            font-size: 13px;
+            font-weight: 700;
+
+            padding: 7px 0;
+
+            transition: .25s;
+        }
+
+
+        .nav a:hover {
+            color: var(--primary);
+        }
+
+
+        .nav a::after {
+            content: "";
+
+            position: absolute;
+
+            right: 0;
+            bottom: 0;
+
+            width: 0;
+            height: 2px;
+
+            background: var(--primary);
+
+            transition: .25s;
+        }
+
+
+        .nav a:hover::after {
+            width: 100%;
+        }
+
+
+        .header-button {
+            padding: 11px 17px;
+
+            border: 0;
+            border-radius: 10px;
+
+            background: var(--primary);
+            color: white;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            transition: .25s;
+
+            white-space: nowrap;
+        }
+
+
+        .header-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+
+        .menu-button {
+            display: none;
+
+            width: 42px;
+            height: 42px;
+
+            border:
+                1px solid var(--gray-200);
+
+            background: white;
+
+            color: var(--dark);
+
+            border-radius: 10px;
+
+            font-size: 20px;
+
+            place-items: center;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            position: relative;
+
+            min-height: 700px;
+
+            display: flex;
+            align-items: center;
+
+            overflow: hidden;
+
+            color: white;
+
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(37, 99, 235, .30),
+                    transparent 25%
+                ),
+
+                radial-gradient(
+                    circle at 10% 80%,
+                    rgba(96, 165, 250, .13),
+                    transparent 25%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #020617,
+                    #0f172a 55%,
+                    #172033
+                );
+        }
+
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,.035) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,.035) 1px,
+                    transparent 1px
+                );
+
+            background-size: 40px 40px;
+
+            opacity: .45;
+        }
+
+
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+
+            display: grid;
+
+            grid-template-columns:
+                1.05fr .95fr;
+
+            align-items: center;
+
+            gap: 70px;
+
+            padding: 70px 0;
+        }
+
+
+        .hero-content {
+            max-width: 680px;
+        }
+
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 8px 13px;
+
+            border:
+                1px solid rgba(255,255,255,.15);
+
+            border-radius: 999px;
+
+            background:
+                rgba(255,255,255,.05);
+
+            color: #bfdbfe;
+
+            font-size: 11px;
+
+            margin-bottom: 22px;
+        }
+
+
+        .badge-dot {
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: #60a5fa;
+
+            box-shadow:
+                0 0 12px rgba(96,165,250,.8);
+        }
+
+
+        .hero h1 {
+            font-size:
+                clamp(42px, 6vw, 72px);
+
+            line-height: 1.08;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 22px;
+        }
+
+
+        .hero h1 span {
+            color: #60a5fa;
+        }
+
+
+        .hero-description {
+            max-width: 650px;
+
+            color: #cbd5e1;
+
+            font-size: 17px;
+
+            line-height: 1.9;
+        }
+
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 32px;
+        }
+
+
+        .hero-primary,
+        .hero-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 13px 20px;
+
+            border-radius: 11px;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            transition: .25s;
+        }
+
+
+        .hero-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+
+        .hero-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+
+        .hero-secondary {
+            border:
+                1px solid rgba(255,255,255,.15);
+
+            background:
+                rgba(255,255,255,.05);
+
+            color: white;
+        }
+
+
+        .hero-secondary:hover {
+            background:
+                rgba(255,255,255,.10);
+
+            transform: translateY(-2px);
+        }
+
+
+        .hero-visual {
+            position: relative;
+
+            min-height: 450px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .dashboard-card {
+            width: min(480px, 100%);
+
+            padding: 18px;
+
+            border:
+                1px solid rgba(255,255,255,.12);
+
+            border-radius: 24px;
+
+            background:
+                rgba(255,255,255,.06);
+
+            backdrop-filter: blur(20px);
+
+            -webkit-backdrop-filter: blur(20px);
+
+            box-shadow:
+                0 35px 100px rgba(0,0,0,.35);
+
+            transform:
+                rotate(-3deg);
+        }
+
+
+        .window-top {
+            height: 34px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 6px;
+
+            border-bottom:
+                1px solid rgba(255,255,255,.08);
+        }
+
+
+        .window-dot {
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: #64748b;
+        }
+
+
+        .window-body {
+            padding-top: 18px;
+        }
+
+
+        .mini-header {
+            display: flex;
+            justify-content: space-between;
+
+            margin-bottom: 18px;
+
+            gap: 15px;
+        }
+
+
+        .mini-title {
+            width: 120px;
+            height: 10px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(255,255,255,.22);
+        }
+
+
+        .mini-button {
+            width: 60px;
+            height: 10px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(96,165,250,.6);
+        }
+
+
+        .mini-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 10px;
+
+            margin-bottom: 14px;
+        }
+
+
+        .mini-box {
+            height: 75px;
+
+            border:
+                1px solid rgba(255,255,255,.08);
+
+            border-radius: 12px;
+
+            background:
+                rgba(255,255,255,.05);
+        }
+
+
+        .mini-chart {
+            height: 160px;
+
+            border:
+                1px solid rgba(255,255,255,.08);
+
+            border-radius: 14px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(37,99,235,.28),
+                    rgba(255,255,255,.03)
+                );
+        }
+
+
+        /* =========================
+           TRUST
+        ========================== */
+
+        .trust {
+            background: white;
+
+            border-bottom:
+                1px solid var(--gray-200);
+        }
+
+
+        .trust-inner {
+            min-height: 110px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            align-items: center;
+
+            gap: 20px;
+        }
+
+
+        .trust-item {
+            text-align: center;
+        }
+
+
+        .trust-item strong {
+            display: block;
+
+            font-size: 24px;
+
+            color: var(--dark);
+        }
+
+
+        .trust-item span {
+            color: var(--gray-500);
+
+            font-size: 11px;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================== */
+
+        section {
+            scroll-margin-top: 90px;
+        }
+
+
+        .section {
+            padding: 90px 0;
+        }
+
+
+        .section-head {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+
+            gap: 25px;
+
+            margin-bottom: 40px;
+        }
+
+
+        .section-label {
+            color: var(--primary);
+
+            font-size: 11px;
+
+            font-weight: 900;
+
+            letter-spacing: .5px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .section-head h2 {
+            font-size: 35px;
+
+            letter-spacing: -.7px;
+        }
+
+
+        .section-head p {
+            max-width: 520px;
+
+            color: var(--gray-500);
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================== */
+
+        .projects {
+            background: var(--gray-50);
+        }
+
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+
+        .project-card {
+            position: relative;
+
+            overflow: hidden;
+
+            background: white;
+
+            border:
+                1px solid var(--gray-200);
+
+            border-radius: var(--radius);
+
+            box-shadow: var(--shadow-sm);
+
+            transition: .35s;
+        }
+
+
+        .project-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow: var(--shadow-lg);
+
+            border-color: #bfdbfe;
+        }
+
+
+        .project-number {
+            position: absolute;
+
+            top: 15px;
+            left: 15px;
+
+            z-index: 3;
+
+            padding: 6px 9px;
+
+            border-radius: 999px;
+
+            background:
+                rgba(2,6,23,.78);
+
+            color: white;
+
+            font-size: 9px;
+
+            font-weight: 900;
+        }
+
+
+        .project-visual {
+            height: 210px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #020617,
+                    #1e293b
+                );
+        }
+
+
+        .project-visual::before {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at 70% 30%,
+                    rgba(37,99,235,.35),
+                    transparent 30%
+                );
+        }
+
+
+        .project-icon {
+            position: relative;
+            z-index: 2;
+
+            width: 82px;
+            height: 82px;
+
+            display: grid;
+            place-items: center;
+
+            border:
+                1px solid rgba(255,255,255,.15);
+
+            border-radius: 22px;
+
+            background:
+                rgba(255,255,255,.07);
+
+            backdrop-filter: blur(10px);
+
+            font-size: 30px;
+        }
+
+
+        .project-content {
+            padding: 22px;
+        }
+
+
+        .project-category {
+            color: var(--primary);
+
+            font-size: 10px;
+
+            font-weight: 900;
+
+            margin-bottom: 6px;
+        }
+
+
+        .project-content h3 {
+            font-size: 19px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .project-content p {
+            color: var(--gray-500);
+
+            font-size: 12px;
+
+            line-height: 1.8;
+
+            min-height: 65px;
+        }
+
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 6px;
+
+            margin: 15px 0 18px;
+        }
+
+
+        .project-tag {
+            padding: 5px 8px;
+
+            border:
+                1px solid var(--gray-200);
+
+            border-radius: 7px;
+
+            background: var(--gray-50);
+
+            color: var(--gray-600);
+
+            font-size: 9px;
+
+            font-weight: 700;
+        }
+
+
+        .project-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding-top: 15px;
+
+            border-top:
+                1px solid var(--gray-100);
+
+            color: var(--primary);
+
+            font-size: 11px;
+
+            font-weight: 900;
+        }
+
+
+        .project-link span:last-child {
+            transition: .25s;
+        }
+
+
+        .project-card:hover .project-link span:last-child {
+            transform: translateX(-5px);
+        }
+
+
+        /* =========================
+           SERVICES
+        ========================== */
+
+        .services {
+            background: white;
+        }
+
+
+        .services-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .service {
+            padding: 27px;
+
+            border:
+                1px solid var(--gray-200);
+
+            border-radius: var(--radius);
+
+            background: white;
+
+            transition: .3s;
+        }
+
+
+        .service:hover {
+            transform: translateY(-5px);
+
+            border-color: #bfdbfe;
+
+            box-shadow: var(--shadow);
+        }
+
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+
+            display: grid;
+            place-items: center;
+
+            margin-bottom: 18px;
+
+            border-radius: 14px;
+
+            background: var(--gray-50);
+
+            color: var(--primary);
+
+            font-size: 20px;
+        }
+
+
+        .service h3 {
+            font-size: 16px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .service p {
+            color: var(--gray-500);
+
+            font-size: 11px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about {
+            background:
+                linear-gradient(
+                    180deg,
+                    var(--gray-50),
+                    white
+                );
+        }
+
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+
+        .about-content h2 {
+            font-size: 37px;
+
+            line-height: 1.2;
+
+            margin-bottom: 18px;
+        }
+
+
+        .about-content > p {
+            color: var(--gray-500);
+
+            font-size: 13px;
+
+            line-height: 2;
+        }
+
+
+        .about-list {
+            margin-top: 25px;
+
+            display: grid;
+
+            gap: 13px;
+        }
+
+
+        .about-list div {
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+
+            color: var(--gray-600);
+
+            font-size: 12px;
+
+            font-weight: 700;
+        }
+
+
+        .check {
+            width: 25px;
+            height: 25px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+
+            background: #eff6ff;
+
+            color: var(--primary);
+
+            font-size: 11px;
+
+            flex-shrink: 0;
+        }
+
+
+        .about-panel {
+            padding: 35px;
+
+            border:
+                1px solid var(--gray-200);
+
+            border-radius: var(--radius-lg);
+
+            background: white;
+
+            box-shadow: var(--shadow);
+        }
+
+
+        .about-panel-top {
+            display: flex;
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 15px;
+
+            margin-bottom: 28px;
+        }
+
+
+        .about-panel h3 {
+            font-size: 17px;
+        }
+
+
+        .status {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            padding: 6px 9px;
+
+            border-radius: 999px;
+
+            background: #f0fdf4;
+
+            color: #15803d;
+
+            font-size: 9px;
+
+            font-weight: 900;
+
+            white-space: nowrap;
+        }
+
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+
+            border-radius: 50%;
+
+            background: var(--success);
+        }
+
+
+        .about-stat {
+            padding: 17px 0;
+
+            border-top:
+                1px solid var(--gray-100);
+        }
+
+
+        .about-stat strong {
+            display: block;
+
+            font-size: 25px;
+        }
+
+
+        .about-stat span {
+            color: var(--gray-500);
+
+            font-size: 10px;
+        }
+
+
+        /* =========================
+           CTA
+        ========================== */
+
+        .cta {
+            padding: 90px 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #020617,
+                    #0f172a
+                );
+
+            color: white;
+        }
+
+
+        .cta-box {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+
+        .cta h2 {
+            font-size: 38px;
+
+            line-height: 1.25;
+
+            margin-bottom: 10px;
+        }
+
+
+        .cta p {
+            color: #94a3b8;
+
+            font-size: 13px;
+        }
+
+
+        .cta-button {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 14px 23px;
+
+            border-radius: 11px;
+
+            background: var(--primary);
+
+            color: white;
+
+            font-size: 12px;
+
+            font-weight: 900;
+
+            white-space: nowrap;
+
+            transition: .25s;
+        }
+
+
+        .cta-button:hover {
+            background: var(--primary-dark);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact {
+            background: white;
+        }
+
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns:
+                .8fr 1.2fr;
+
+            gap: 25px;
+        }
+
+
+        .contact-info {
+            padding: 30px;
+
+            border:
+                1px solid var(--gray-200);
+
+            border-radius: var(--radius);
+
+            background:
+                var(--gray-50);
+        }
+
+
+        .contact-info h3 {
+            font-size: 22px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .contact-info > p {
+            color: var(--gray-500);
+
+            font-size: 12px;
+
+            line-height: 1.9;
+
+            margin-bottom: 25px;
+        }
+
+
+        .contact-item {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding: 13px 0;
+
+            border-top:
+                1px solid var(--gray-200);
+        }
+
+
+        .contact-icon {
+            width: 38px;
+            height: 38px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 10px;
+
+            background: white;
+
+            color: var(--primary);
+
+            box-shadow: var(--shadow-sm);
+
+            flex-shrink: 0;
+        }
+
+
+        .contact-icon svg {
+            width: 18px;
+            height: 18px;
+        }
+
+
+        .contact-item strong {
+            display: block;
+
+            font-size: 11px;
+        }
+
+
+        .contact-item span {
+            color: var(--gray-500);
+
+            font-size: 10px;
+
+            overflow-wrap: anywhere;
+        }
+
+
+        /* =========================
+           SOCIAL ICON BUTTONS
+        ========================== */
+
+        .contact-actions {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-top: 20px;
+        }
+
+
+        .contact-action {
+            width: 46px;
+            height: 46px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 13px;
+
+            color: white;
+
+            transition:
+                transform .25s,
+                box-shadow .25s,
+                filter .25s;
+
+            box-shadow:
+                0 8px 22px rgba(15, 23, 42, .12);
+        }
+
+
+        .contact-action:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 14px 30px rgba(15, 23, 42, .18);
+
+            filter: brightness(.96);
+        }
+
+
+        .contact-action svg {
+            width: 23px;
+            height: 23px;
+        }
+
+
+        .whatsapp-action {
+            background: #25D366;
+        }
+
+
+        .telegram-action {
+            background: #229ED9;
+        }
+
+
+        /* =========================
+           CONTACT FORM
+        ========================== */
+
+        .contact-form {
+            padding: 30px;
+
+            border:
+                1px solid var(--gray-200);
+
+            border-radius: var(--radius);
+
+            background: white;
+
+            box-shadow: var(--shadow-sm);
+        }
+
+
+        .form-grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 15px;
+        }
+
+
+        .form-group {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 6px;
+        }
+
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+
+        .form-group label {
+            color: var(--gray-600);
+
+            font-size: 10px;
+
+            font-weight: 800;
+        }
+
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+
+            border:
+                1px solid var(--gray-200);
+
+            border-radius: 10px;
+
+            outline: none;
+
+            padding: 12px;
+
+            background: var(--gray-50);
+
+            color: var(--dark);
+
+            font-size: 11px;
+
+            transition: .2s;
+        }
+
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--gray-400);
+        }
+
+
+        .form-group textarea {
+            min-height: 140px;
+
+            resize: vertical;
+        }
+
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+
+            background: white;
+
+            box-shadow:
+                0 0 0 3px rgba(37,99,235,.07);
+        }
+
+
+        .form-submit {
+            margin-top: 18px;
+
+            width: 100%;
+
+            border: 0;
+
+            border-radius: 10px;
+
+            padding: 13px;
+
+            background: var(--primary);
+
+            color: white;
+
+            font-size: 11px;
+
+            font-weight: 900;
+
+            transition: .25s;
+        }
+
+
+        .form-submit:hover {
+            background: var(--primary-dark);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #020617;
+
+            color: white;
+
+            padding: 35px 0;
+        }
+
+
+        .footer-inner {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+
+        .footer-brand strong {
+            display: block;
+
+            font-size: 14px;
+        }
+
+
+        .footer-brand span {
+            color: #64748b;
+
+            font-size: 9px;
+        }
+
+
+        .footer-copy {
+            color: #64748b;
+
+            font-size: 9px;
+
+            text-align: center;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================== */
+
+        @media (max-width: 1050px) {
+
+            .nav {
+                gap: 18px;
+            }
+
+            .hero-inner {
+                gap: 40px;
+            }
+
+            .projects-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .services-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE NAV
+        ========================== */
+
+        @media (max-width: 850px) {
+
+            .nav {
+                position: absolute;
+
+                top: calc(100% + 10px);
+
+                right: 14px;
+                left: 14px;
+
+                display: none;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 0;
+
+                padding: 10px;
+
+                border:
+                    1px solid var(--gray-200);
+
+                border-radius: 14px;
+
+                background: white;
+
+                box-shadow: var(--shadow);
+
+                max-height:
+                    calc(100vh - 100px);
+
+                overflow-y: auto;
+            }
+
+
+            .nav.active {
+                display: flex;
+            }
+
+
+            .nav a {
+                padding: 12px;
+
+                border-radius: 8px;
+            }
+
+
+            .nav a:hover {
+                background: var(--gray-50);
+            }
+
+
+            .menu-button {
+                display: grid;
+            }
+
+
+            .header-button {
+                display: none;
+            }
+
+
+            .hero-inner {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+
+                gap: 30px;
+            }
+
+
+            .hero-content {
+                margin: auto;
+            }
+
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+
+            .hero-visual {
+                min-height: 320px;
+            }
+
+
+            .dashboard-card {
+                transform: rotate(0);
+            }
+
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        /* =========================
+           SMALL MOBILE
+        ========================== */
+
+        @media (max-width: 650px) {
+
+            .container {
+                width:
+                    calc(100% - 28px);
+            }
+
+
+            .header-inner {
+                min-height: 68px;
+
+                gap: 10px;
+            }
+
+
+            .brand-logo {
+                width: 41px;
+                height: 41px;
+            }
+
+
+            .brand-text strong {
+                font-size: 14px;
+            }
+
+
+            .brand-text small {
+                font-size: 9px;
+            }
+
+
+            .hero {
+                min-height: auto;
+
+                padding: 55px 0;
+            }
+
+
+            .hero-inner {
+                padding: 0;
+            }
+
+
+            .hero h1 {
+                font-size: 42px;
+
+                letter-spacing: -1.5px;
+            }
+
+
+            .hero-description {
+                font-size: 14px;
+
+                line-height: 1.85;
+            }
+
+
+            .hero-actions {
+                flex-direction: column;
+
+                width: 100%;
+            }
+
+
+            .hero-primary,
+            .hero-secondary {
+                width: 100%;
+            }
+
+
+            .hero-visual {
+                min-height: 250px;
+            }
+
+
+            .dashboard-card {
+                padding: 13px;
+            }
+
+
+            .mini-box {
+                height: 55px;
+            }
+
+
+            .mini-chart {
+                height: 115px;
+            }
+
+
+            .trust-inner {
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                padding: 20px 0;
+
+                gap: 18px;
+            }
+
+
+            .trust-item strong {
+                font-size: 20px;
+            }
+
+
+            .trust-item span {
+                font-size: 9px;
+            }
+
+
+            .section {
+                padding: 65px 0;
+            }
+
+
+            .section-head {
+                display: block;
+            }
+
+
+            .section-head h2 {
+                font-size: 28px;
+
+                margin-bottom: 10px;
+            }
+
+
+            .section-head p {
+                font-size: 12px;
+            }
+
+
+            .projects-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .project-visual {
+                height: 190px;
+            }
+
+
+            .project-content p {
+                min-height: auto;
+            }
+
+
+            .about-content h2 {
+                font-size: 30px;
+            }
+
+
+            .about-panel {
+                padding: 25px;
+            }
+
+
+            .about-panel-top {
+                align-items: flex-start;
+
+                flex-direction: column;
+            }
+
+
+            .cta {
+                padding: 65px 0;
+            }
+
+
+            .cta-box {
+                display: block;
+            }
+
+
+            .cta h2 {
+                font-size: 30px;
+
+                margin-bottom: 20px;
+            }
+
+
+            .cta-button {
+                margin-top: 22px;
+
+                width: 100%;
+            }
+
+
+            .contact-info,
+            .contact-form {
+                padding: 22px;
+            }
+
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+
+            .footer-inner {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+
+            .footer-copy {
+                line-height: 1.8;
+            }
+
+        }
+
+
+        /* =========================
+           VERY SMALL PHONES
+        ========================== */
+
+        @media (max-width: 380px) {
+
+            .container {
+                width:
+                    calc(100% - 22px);
+            }
+
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+
+            .hero-description {
+                font-size: 13px;
+            }
+
+
+            .project-content {
+                padding: 18px;
+            }
+
+
+            .service {
+                padding: 21px;
+            }
+
+
+            .contact-info,
+            .contact-form {
+                padding: 18px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+        <div class="container header-inner">
+
+            <a href="#home"
+               class="brand"
+               aria-label="Digital Solutions">
+
+                <div class="brand-logo">
+                    <span>DS</span>
+                </div>
+
+                <div class="brand-text">
+
+                    <strong>
+                        Digital Solutions
+                    </strong>
+
+                    <small>
+                        حلول رقمية متكاملة
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <nav class="nav"
+                 id="mainNav"
+                 aria-label="القائمة الرئيسية">
+
+                <a href="#home">
+                    الرئيسية
+                </a>
+
+                <a href="#projects">
+                    المشاريع
+                </a>
+
+                <a href="#services">
+                    الخدمات
+                </a>
+
+                <a href="#about">
+                    من نحن
+                </a>
+
+                <a href="#contact">
+                    التواصل
+                </a>
+
+            </nav>
+
+
+            <a
+                href="#contact"
+                class="header-button"
+            >
+                ابدأ مشروعك
+            </a>
+
+
+            <button
+                type="button"
+                class="menu-button"
+                id="menuButton"
+                aria-label="فتح القائمة"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero" id="home">
+
+        <div class="container hero-inner">
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+
+                    <span class="badge-dot"></span>
+
+                    حلول رقمية مصممة للأعمال
+
+                </div>
+
+
+                <h1>
+
+                    نبني حلولًا رقمية
+
+                    <span>
+                        تدفع نمو أعمالك
+                    </span>
+
+                </h1>
+
+
+                <p class="hero-description">
+
+                    نطوّر المواقع والمنصات والتطبيقات والأنظمة
+                    والبرمجيات المخصصة التي تساعد الشركات ورواد
+                    الأعمال على تحويل الأفكار إلى حلول رقمية
+                    عملية وقابلة للتطوير.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <a
+                        href="#projects"
+                        class="hero-primary"
+                    >
+                        استعرض المشاريع
+                    </a>
+
+
+                    <a
+                        href="#contact"
+                        class="hero-secondary"
+                    >
+                        ابدأ مشروعًا جديدًا
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-visual">
+
+                <div class="dashboard-card">
+
+                    <div class="window-top">
+
+                        <span class="window-dot"></span>
+                        <span class="window-dot"></span>
+                        <span class="window-dot"></span>
+
+                    </div>
+
+
+                    <div class="window-body">
+
+                        <div class="mini-header">
+
+                            <div class="mini-title"></div>
+
+                            <div class="mini-button"></div>
+
+                        </div>
+
+
+                        <div class="mini-grid">
+
+                            <div class="mini-box"></div>
+                            <div class="mini-box"></div>
+                            <div class="mini-box"></div>
+
+                        </div>
+
+
+                        <div class="mini-chart"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TRUST
+    ========================== -->
+
+    <section class="trust">
+
+        <div class="container trust-inner">
+
+            <div class="trust-item">
+
+                <strong>
+                    05
+                </strong>
+
+                <span>
+                    مشاريع رقمية
+                </span>
+
+            </div>
+
+
+            <div class="trust-item">
+
+                <strong>
+                    100%
+                </strong>
+
+                <span>
+                    تصميم متجاوب
+                </span>
+
+            </div>
+
+
+            <div class="trust-item">
+
+                <strong>
+                    Web
+                </strong>
+
+                <span>
+                    حلول وتطبيقات ويب
+                </span>
+
+            </div>
+
+
+            <div class="trust-item">
+
+                <strong>
+                    Custom
+                </strong>
+
+                <span>
+                    برمجيات مخصصة
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section class="section projects"
+             id="projects">
+
+        <div class="container">
+
+            <div class="section-head">
+
+                <div>
+
+                    <div class="section-label">
+                        OUR PROJECTS
+                    </div>
+
+                    <h2>
+                        مشاريعنا
+                    </h2>
+
+                </div>
+
+
+                <p>
+
+                    مجموعة من المشاريع الرقمية التي تم تصميمها
+                    وتطويرها لتقديم تجارب استخدام عملية وواجهات
+                    احترافية وحلول قابلة للتطوير.
+
+                </p>
+
+            </div>
+
+
+            <div class="projects-grid">
+
+
+                <!-- PROJECT 01 -->
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        PROJECT 01
+                    </div>
+
+
+                    <div class="project-visual">
+
+                        <div class="project-icon">
+                            📊
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-category">
+                            ANALYTICS PLATFORM
+                        </div>
+
+
+                        <h3>
+                            Global Market Monitor
+                        </h3>
+
+
+                        <p>
+
+                            منصة رقمية تفاعلية لعرض ومتابعة
+                            بيانات الأسواق والمؤشرات بطريقة
+                            واضحة وسهلة الاستخدام.
+
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span class="project-tag">
+                                Dashboard
+                            </span>
+
+                            <span class="project-tag">
+                                Analytics
+                            </span>
+
+                            <span class="project-tag">
+                                Web
+                            </span>
+
+                        </div>
+
+
+                        <a
+                            href="https://s4ibp54hd7bwq.kimi.page/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link"
+                        >
+
+                            <span>
+                                عرض المشروع
+                            </span>
+
+                            <span>
+                                ←
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 02 -->
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        PROJECT 02
+                    </div>
+
+
+                    <div class="project-visual">
+
+                        <div class="project-icon">
+                            💻
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-category">
+                            BUSINESS WEBSITE
+                        </div>
+
+
+                        <h3>
+                            Digital Solutions
+                        </h3>
+
+
+                        <p>
+
+                            موقع أعمال احترافي لعرض الخدمات
+                            والمشاريع والحلول الرقمية وبناء
+                            حضور رقمي قوي للشركة.
+
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span class="project-tag">
+                                Portfolio
+                            </span>
+
+                            <span class="project-tag">
+                                Responsive
+                            </span>
+
+                            <span class="project-tag">
+                                Business
+                            </span>
+
+                        </div>
+
+
+                        <a
+                            href="https://ztywsf895-beep.github.io/youssef-/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link"
+                        >
+
+                            <span>
+                                عرض المشروع
+                            </span>
+
+                            <span>
+                                ←
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 03 -->
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        PROJECT 03
+                    </div>
+
+
+                    <div class="project-visual">
+
+                        <div class="project-icon">
+                            🏢
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-category">
+                            BUSINESS MANAGEMENT
+                        </div>
+
+
+                        <h3>
+                            Business Management System
+                        </h3>
+
+
+                        <p>
+
+                            نظام متكامل لإدارة العمليات والبيانات
+                            ومتابعة الأعمال من خلال لوحة تحكم
+                            موحدة وواجهة احترافية.
+
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span class="project-tag">
+                                Dashboard
+                            </span>
+
+                            <span class="project-tag">
+                                Management
+                            </span>
+
+                            <span class="project-tag">
+                                Web App
+                            </span>
+
+                        </div>
+
+
+                        <a
+                            href="https://ztywsf895-beep.github.io/youssef/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link"
+                        >
+
+                            <span>
+                                عرض المشروع
+                            </span>
+
+                            <span>
+                                ←
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 04 -->
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        PROJECT 04
+                    </div>
+
+
+                    <div class="project-visual">
+
+                        <div class="project-icon">
+                            🛒
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-category">
+                            E-COMMERCE
+                        </div>
+
+
+                        <h3>
+                            NOVA Market
+                        </h3>
+
+
+                        <p>
+
+                            متجر إلكتروني حديث لعرض المنتجات
+                            وتنظيم تجربة التسوق وإدارة المنتجات
+                            والطلبات بطريقة احترافية.
+
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span class="project-tag">
+                                E-commerce
+                            </span>
+
+                            <span class="project-tag">
+                                Products
+                            </span>
+
+                            <span class="project-tag">
+                                Web
+                            </span>
+
+                        </div>
+
+
+                        <a
+                            href="https://ztywsf895-beep.github.io/YOUSSEF-HEMA-AZZA/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link"
+                        >
+
+                            <span>
+                                عرض المشروع
+                            </span>
+
+                            <span>
+                                ←
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 05 -->
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        PROJECT 05
+                    </div>
+
+
+                    <div class="project-visual">
+
+                        <div class="project-icon">
+                            👥
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-category">
+                            HR MANAGEMENT
+                        </div>
+
+
+                        <h3>
+                            HR Management System
+                        </h3>
+
+
+                        <p>
+
+                            نظام لإدارة الموارد البشرية والموظفين
+                            والعمليات الداخلية من خلال واجهة
+                            إدارية منظمة وقابلة للتوسع.
+
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span class="project-tag">
+                                HR
+                            </span>
+
+                            <span class="project-tag">
+                                Dashboard
+                            </span>
+
+                            <span class="project-tag">
+                                Management
+                            </span>
+
+                        </div>
+
+
+                        <a
+                            href="https://ztywsf895-beep.github.io/YOUSSEF-HEM-AZZA/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link"
+                        >
+
+                            <span>
+                                عرض المشروع
+                            </span>
+
+                            <span>
+                                ←
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SERVICES
+    ========================== -->
+
+    <section class="section services"
+             id="services">
+
+        <div class="container">
+
+            <div class="section-head">
+
+                <div>
+
+                    <div class="section-label">
+                        OUR SERVICES
+                    </div>
+
+                    <h2>
+                        حلول تقنية متكاملة
+                    </h2>
+
+                </div>
+
+
+                <p>
+
+                    نساعد الشركات والمشاريع على بناء حلول
+                    رقمية مناسبة لاحتياجاتها، من الفكرة وحتى
+                    المنتج النهائي.
+
+                </p>
+
+            </div>
+
+
+            <div class="services-grid">
+
+
+                <div class="service">
+
+                    <div class="service-icon">
+                        ◈
+                    </div>
+
+                    <h3>
+                        تطوير المواقع والمنصات
+                    </h3>
+
+                    <p>
+                        تطوير مواقع ومنصات حديثة وسريعة
+                        ومتجاوبة مع مختلف الأجهزة.
+                    </p>
+
+                </div>
+
+
+                <div class="service">
+
+                    <div class="service-icon">
+                        ◫
+                    </div>
+
+                    <h3>
+                        تطوير التطبيقات
+                    </h3>
+
+                    <p>
+                        بناء تطبيقات ويب وحلول رقمية
+                        مصممة وفق احتياجات المشروع.
+                    </p>
+
+                </div>
+
+
+                <div class="service">
+
+                    <div class="service-icon">
+                        ▣
+                    </div>
+
+                    <h3>
+                        الأنظمة والبرمجيات
+                    </h3>
+
+                    <p>
+                        تطوير أنظمة ولوحات تحكم وبرمجيات
+                        مخصصة لإدارة الأعمال.
+                    </p>
+
+                </div>
+
+
+                <div class="service">
+
+                    <div class="service-icon">
+                        ⚙
+                    </div>
+
+                    <h3>
+                        الأتمتة
+                    </h3>
+
+                    <p>
+                        أتمتة المهام وربط الأدوات والأنظمة
+                        وتحسين سير العمل.
+                    </p>
+
+                </div>
+
+
+                <div class="service">
+
+                    <div class="service-icon">
+                        ◆
+                    </div>
+
+                    <h3>
+                        المنتجات الرقمية
+                    </h3>
+
+                    <p>
+                        تحويل الأفكار إلى منتجات رقمية
+                        قابلة للتطوير والنمو.
+                    </p>
+
+                </div>
+
+
+                <div class="service">
+
+                    <div class="service-icon">
+                        ?
+                    </div>
+
+                    <h3>
+                        الاستشارات التقنية
+                    </h3>
+
+                    <p>
+                        تحليل الاحتياجات واختيار الحلول
+                        والتقنيات المناسبة للمشروع.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section class="section about"
+             id="about">
+
+        <div class="container about-grid">
+
+
+            <div class="about-content">
+
+                <div class="section-label">
+                    ABOUT DIGITAL SOLUTIONS
+                </div>
+
+
+                <h2>
+                    التقنية ليست مجرد كود،
+                    بل حل لمشكلة حقيقية.
+                </h2>
+
+
+                <p>
+
+                    نركز على بناء حلول رقمية عملية تجمع بين
+                    التصميم الاحترافي وسهولة الاستخدام
+                    والوظائف التي يحتاجها المشروع فعلًا.
+
+                </p>
+
+
+                <div class="about-list">
+
+                    <div>
+
+                        <span class="check">
+                            ✓
+                        </span>
+
+                        تصميمات حديثة ومتجاوبة
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="check">
+                            ✓
+                        </span>
+
+                        أنظمة مخصصة حسب احتياج المشروع
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="check">
+                            ✓
+                        </span>
+
+                        واجهات سهلة الاستخدام
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="check">
+                            ✓
+                        </span>
+
+                        حلول قابلة للتطوير مستقبلًا
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="about-panel">
+
+                <div class="about-panel-top">
+
+                    <h3>
+                        Digital Solutions
+                    </h3>
+
+
+                    <span class="status">
+
+                        <span class="status-dot"></span>
+
+                        Digital Studio
+
+                    </span>
+
+                </div>
+
+
+                <div class="about-stat">
+
+                    <strong>
+                        Web
+                    </strong>
+
+                    <span>
+                        Websites & Web Applications
+                    </span>
+
+                </div>
+
+
+                <div class="about-stat">
+
+                    <strong>
+                        Systems
+                    </strong>
+
+                    <span>
+                        Custom Business Software
+                    </span>
+
+                </div>
+
+
+                <div class="about-stat">
+
+                    <strong>
+                        Digital
+                    </strong>
+
+                    <span>
+                        Products & Digital Solutions
+                    </span>
+
+                </div>
+
+
+                <div class="about-stat">
+
+                    <strong>
+                        Automation
+                    </strong>
+
+                    <span>
+                        Workflow & System Integration
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CTA
+    ========================== -->
+
+    <section class="cta">
+
+        <div class="container cta-box">
+
+            <div>
+
+                <h2>
+                    لديك فكرة مشروع؟
+                </h2>
+
+                <p>
+                    دعنا نحولها إلى حل رقمي احترافي.
+                </p>
+
+            </div>
+
+
+            <a
+                href="#contact"
+                class="cta-button"
+            >
+                تحدث معنا
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section class="section contact"
+             id="contact">
+
+        <div class="container">
+
+
+            <div class="section-head">
+
+                <div>
+
+                    <div class="section-label">
+                        CONTACT
+                    </div>
+
+                    <h2>
+                        ابدأ مشروعك
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    أخبرنا عن فكرتك وسنتواصل معك لمناقشة
+                    المتطلبات والحل المناسب.
+                </p>
+
+            </div>
+
+
+            <div class="contact-grid">
+
+
+                <!-- CONTACT INFO -->
+
+                <div class="contact-info">
+
+                    <h3>
+                        Digital Solutions
+                    </h3>
+
+
+                    <p>
+
+                        للحلول الرقمية والبرمجيات المخصصة
+                        وتطوير المواقع والأنظمة والتطبيقات.
+
+                    </p>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                aria-hidden="true"
+                            >
+
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2
+                                    19.79 19.79 0 0 1-8.63-3.07
+                                    19.5 19.5 0 0 1-6-6
+                                    19.79 19.79 0 0 1-3.07-8.67
+                                    A2 2 0 0 1 4.11 2h3
+                                    a2 2 0 0 1 2 1.72
+                                    12.84 12.84 0 0 0 .7 2.81
+                                    2 2 0 0 1-.45 2.11L8.09 9.91
+                                    a16 16 0 0 0 6 6l1.27-1.27
+                                    a2 2 0 0 1 2.11-.45
+                                    12.84 12.84 0 0 0 2.81.7
+                                    A2 2 0 0 1 22 16.92z"
+                                />
+
+                            </svg>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                الهاتف
+                            </strong>
+
+                            <span>
+                                01101281161
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                aria-hidden="true"
+                            >
+
+                                <path
+                                    d="M4 4h16c1.1 0 2 .9 2 2v12
+                                    c0 1.1-.9 2-2 2H4
+                                    c-1.1 0-2-.9-2-2V6
+                                    c0-1.1.9-2 2-2z"
+                                />
+
+                                <path
+                                    d="m22 6-10 7L2 6"
+                                />
+
+                            </svg>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                البريد الإلكتروني
+                            </strong>
+
+                            <span>
+                                ztywsf895@gmail.com
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                aria-hidden="true"
+                            >
+
+                                <path
+                                    d="M22 2 11 13"
+                                />
+
+                                <path
+                                    d="m22 2-7 20-4-9-9-4Z"
+                                />
+
+                            </svg>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Telegram
+                            </strong>
+
+                            <span>
+                                @youssef7
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SOCIAL BUTTONS -->
+
+                    <div class="contact-actions">
+
+
+                        <!-- WHATSAPP -->
+
+                        <a
+                            href="https://wa.me/201101281161"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="contact-action whatsapp-action"
+                            aria-label="التواصل عبر WhatsApp"
+                            title="WhatsApp"
+                        >
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                aria-hidden="true"
+                            >
+
+                                <path
+                                    fill="currentColor"
+                                    d="M20.52 3.48A11.87 11.87 0 0 0 12.06 0
+                                    C5.5 0 .16 5.34.16 11.9
+                                    c0 2.1.55 4.15 1.6 5.96L.05 24
+                                    l6.28-1.65a11.86 11.86 0 0 0 5.73 1.47h.01
+                                    c6.56 0 11.9-5.34 11.9-11.9
+                                    0-3.18-1.24-6.17-3.45-8.44Z"
+                                />
+
+                                <path
+                                    fill="#fff"
+                                    d="M17.46 14.16c-.3-.15-1.77-.87-2.05-.97
+                                    -.27-.1-.47-.15-.67.15
+                                    -.2.3-.77.97-.95 1.17
+                                    -.17.2-.35.22-.65.07
+                                    -.3-.15-1.26-.46-2.4-1.48
+                                    -.89-.79-1.49-1.77-1.66-2.07
+                                    -.17-.3-.02-.46.13-.61
+                                    .13-.13.3-.35.45-.52
+                                    .15-.17.2-.3.3-.5
+                                    .1-.2.05-.37-.02-.52
+                                    -.07-.15-.67-1.62-.92-2.22
+                                    -.24-.58-.49-.5-.67-.51
+                                    -.17-.01-.37-.01-.57-.01
+                                    -.2 0-.52.07-.8.37
+                                    -.27.3-1.03 1-1.03 2.43
+                                    0 1.43 1.05 2.81 1.2 3.01
+                                    .15.2 2.06 3.14 4.99 4.4
+                                    .7.3 1.25.48 1.68.61
+                                    .7.22 1.34.19 1.84.11
+                                    .56-.08 1.77-.72 2.02-1.42
+                                    .25-.7.25-1.3.17-1.42
+                                    -.07-.12-.27-.2-.57-.35Z"
+                                />
+
+                            </svg>
+
+                        </a>
+
+
+                        <!-- TELEGRAM -->
+
+                        <a
+                            href="https://t.me/youssef7"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="contact-action telegram-action"
+                            aria-label="التواصل عبر Telegram"
+                            title="Telegram"
+                        >
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                aria-hidden="true"
+                            >
+
+                                <path
+                                    fill="currentColor"
+                                    d="M22.02 2.07 2.6 9.56
+                                    c-1.33.53-1.32 1.26-.24 1.59
+                                    l4.98 1.55 1.91 5.8
+                                    c.23.64.12.9.76.9
+                                    l2.72-2.62 5.65 4.18
+                                    c1.04.57 1.78.27 2.04-.96
+                                    L23.79 3.25
+                                    c.39-1.52-.58-2.2-1.77-1.18Z"
+                                />
+
+                                <path
+                                    fill="#fff"
+                                    d="m8.1 12.43 9.72-6.13
+                                    c.48-.29.92-.13.56.18
+                                    l-7.88 7.11-.3 2.92
+                                    c-.04.4-.36.44-.54.1
+                                    l-1.56-3.18Z"
+                                />
+
+                            </svg>
+
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTACT FORM -->
+
+                <form
+                    class="contact-form"
+                    id="contactForm"
+                >
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                الاسم
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="اكتب اسمك"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                رقم الواتساب أو الهاتف
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="مثال: 01101281161"
+                                autocomplete="tel"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label for="project">
+                                نوع المشروع
+                            </label>
+
+                            <input
+                                type="text"
+                                id="project"
+                                name="project"
+                                placeholder="موقع، تطبيق، نظام، متجر إلكتروني..."
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label for="message">
+                                تفاصيل المشروع
+                            </label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                placeholder="اكتب تفاصيل فكرتك أو المشروع المطلوب..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="form-submit"
+                    >
+                        إرسال طلب المشروع على الواتساب
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="container footer-inner">
+
+            <div class="footer-brand">
+
+                <strong>
+                    Digital Solutions
+                </strong>
+
+                <span>
+                    حلول رقمية متكاملة
+                </span>
+
+            </div>
+
+
+            <div class="footer-copy">
+
+                © 2026 Digital Solutions.
+                جميع الحقوق محفوظة.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        /* =========================
+           MOBILE MENU
+        ========================== */
+
+        const menuButton =
+            document.getElementById("menuButton");
+
+        const mainNav =
+            document.getElementById("mainNav");
+
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+
+                const isOpen =
+                    mainNav.classList.toggle("active");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    isOpen
+                );
+
+                menuButton.textContent =
+                    isOpen ? "✕" : "☰";
+
+            }
+        );
+
+
+        /* =========================
+           CLOSE MENU AFTER CLICK
+        ========================== */
+
+        const navLinks =
+            document.querySelectorAll(".nav a");
+
+
+        navLinks.forEach(
+            function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        mainNav.classList.remove("active");
+
+                        menuButton.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                        menuButton.textContent =
+                            "☰";
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =========================
+           CONTACT FORM
+        ========================== */
+
+        const contactForm =
+            document.getElementById("contactForm");
+
+
+        contactForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById("name")
+                    .value
+                    .trim();
+
+
+                const phone =
+                    document.getElementById("phone")
+                    .value
+                    .trim();
+
+
+                const project =
+                    document.getElementById("project")
+                    .value
+                    .trim();
+
+
+                const message =
+                    document.getElementById("message")
+                    .value
+                    .trim();
+
+
+                if (
+                    name === "" ||
+                    phone === "" ||
+                    project === "" ||
+                    message === ""
+                ) {
+
+                    alert(
+                        "من فضلك أكمل جميع البيانات."
+                    );
+
+                    return;
+
+                }
+
+
+                const whatsappMessage =
+                    "مرحبًا، أريد طلب مشروع جديد.\n\n" +
+                    "الاسم: " + name + "\n" +
+                    "رقم الهاتف / واتساب: " + phone + "\n" +
+                    "نوع المشروع: " + project + "\n" +
+                    "تفاصيل المشروع: " + message;
+
+
+                const whatsappURL =
+                    "https://wa.me/201101281161?text=" +
+                    encodeURIComponent(
+                        whatsappMessage
+                    );
+
+
+                window.open(
+                    whatsappURL,
+                    "_blank",
+                    "noopener,noreferrer"
+                );
+
+            }
+        );
+
+
+        /* =========================
+           CLOSE MOBILE MENU
+           WHEN CLICKING OUTSIDE
+        ========================== */
+
+        document.addEventListener(
+            "click",
+            function (event) {
+
+                const clickedInsideNav =
+                    mainNav.contains(event.target);
+
+                const clickedMenu =
+                    menuButton.contains(event.target);
+
+
+                if (
+                    !clickedInsideNav &&
+                    !clickedMenu &&
+                    mainNav.classList.contains("active")
+                ) {
+
+                    mainNav.classList.remove("active");
+
+                    menuButton.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    menuButton.textContent =
+                        "☰";
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
